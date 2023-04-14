@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ movie.title }} - Details{% endblock %}
+
+{% block body %}
+<h1>{{ movie.title }}</h1>
+
+<p>
+  {{ movie.overview }}
+</p>
+
+<h2>Please rate this movie: Pretty please, now would be great!!</h2>
+<form action="/user_rating" method="POST">
+  <input type="radio" name="rating_radio_button" value="1" > 1: Slept through the whole thing"
+  <input type="radio" name="rating_radio_button" value="2" > 2: I would take my mother-in-law to this"
+  <input type="radio" name="rating_radio_button" value="3" > 3: Tolerable! I would eat dinner first!
+  <input type="radio" name="rating_radio_button" value="4" > 4: Better than the last movie I watched!"
+  <input type="radio" name="rating_radio_button" value="5" > 5: Hot first date worthy!
+  <input type="submit">
+</form>
+
+
+
+<img src="{{ movie.poster_path }}">
+{% endblock %}
